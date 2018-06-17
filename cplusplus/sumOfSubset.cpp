@@ -5,28 +5,26 @@ int a[5],k=0;
 bool sumOfSubset(int set[],int n,int sum) {
    if(n==0)
     return false;
-   if(n==1) {
-     if(set[n-1]==sum) {
-      a[k++]=set[n-1];
-      return true;
-     }
-     else return false;
+   int i=n-1;
+   
+   if(set[i]==sum){
+    a[k++]=set[i];
+    return true;
    }
+   
+   else if(set[i]>sum)
+    return sumOfSubset(set,i,sum);
+    
    else {
-    if(set[n-1]>sum)
-      return sumOfSubset(set,n-1,sum);
-    else {
-     int sum1=sum-set[n-1];
-      const int pos=n-1;
-      if(sumOfSubset(set,n-1,sum1)==true) 
+     int sum1=sum-set[i];
+     int pos = i;
+     if(sumOfSubset(set,i,sum1)==true) 
         a[k++]=set[pos];
-      else {
-       n = pos;
-       return sumOfSubset(set,n-1,sum); 
-      }
-    }
-   }
+     else 
+       return sumOfSubset(set,i,sum); 
+   }  
 }
+
 
 int main() {
  int set[] = {3,34, 4, 12, 5,2}, sum = 9;
