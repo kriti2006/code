@@ -3,7 +3,6 @@
 using namespace std;
 int main() { 
  int pos,num;
-// Node *head=NULL;
  Node *first = insert();
  print(first);
  cout<<"enter pos and num";
