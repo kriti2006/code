@@ -9,10 +9,10 @@ struct Node {
 };
 Node *head = NULL;
 Node* insert() {
- int arr[] = {35,30,28,24,13};
+ int arr[] = {14,25,12,24,30,35,38,40,45};
  int i;
  int n=sizeof(arr)/sizeof(arr[0]);
- for(i=0;i<5;i++) {
+ for(i=0;i<n;i++) {
   Node *node=new Node;
   node->data=arr[i];
   if(head==NULL) {

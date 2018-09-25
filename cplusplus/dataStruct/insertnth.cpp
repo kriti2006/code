@@ -15,36 +15,28 @@ int main() {
  if(first==NULL) 
   first=node;
  else {
-  Node *ptr=first;
-  while(count!=pos-1) {
-   count++;
-   ptr=ptr->next;
+  if(pos==1) {            //insertFirst
+   node->next=first;
+   first=node;
+  } 
+  else {
+     Node *ptr=first;
+     while(count!=pos-1) {
+      count++;
+      ptr=ptr->next;
+     }
+     if(ptr->next==NULL) {     //insertLast
+      ptr->next=node;
+     }
+     else {
+        node->next=ptr;
+        ptr->next=node;
+     }
   }
-  node->next=ptr->next;
-  ptr->next=node;
  }
  print(first);
 }   
   
    
-/*#include<list>
-using namespace std;
-struct Node {
- int data;
- Node *next;
-};
-int main() {
- list <int> ilist={1,2,4,5,6};
- list <int>::iterator it=ilist.begin();
- cout<<"enter position & data";
- int pos,num;
- cin>>pos>>num;
- Node *node=new Node;
- node->data=num;
- node->next=NULL; 
-  if(head==NULL)
-   return;
-  advance(it,pos-2);
-*/ 
   
   

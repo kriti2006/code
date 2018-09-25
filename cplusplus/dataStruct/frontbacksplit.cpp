@@ -1,5 +1,27 @@
+#include"node.h"
 #include<iostream>
-#include<lists>
 using namespace std;
+
+void frontbacksplit(Node *head) {
+   Node *slow=head;
+   Node *fast=head;
+   Node *second=NULL;
+   while(fast->next!=NULL) {
+      slow=slow->next;
+      fast=fast->next;
+      fast=fast->next;
+    //  if((fast->next)->next==NULL)
+      //   break;
+   }
+   second=slow->next;
+   slow->next=NULL;
+   print(head);
+   print(second);
+}
+
 int main() {
+   Node *head = insert();
+   print(head);
+   frontbacksplit(head);
+   return 0;
 }
