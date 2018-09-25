@@ -2,7 +2,6 @@
 #include"sortedinsert.h"
 #include<iostream>
 using namespace std;
-
 void insertsort(Node *current, Node *ptr, Node *node) {
  int temp;
  Node *first = current;
@@ -21,8 +20,6 @@ void insertsort(Node *current, Node *ptr, Node *node) {
  print(first);
  sortedinsert(first,node);
 }
-
-
 int main() {
  Node *head=insert(); 
  print(head);
