@@ -10,8 +10,6 @@ void frontbacksplit(Node *head) {
       slow=slow->next;
       fast=fast->next;
       fast=fast->next;
-    //  if((fast->next)->next==NULL)
-      //   break;
    }
    second=slow->next;
    slow->next=NULL;
