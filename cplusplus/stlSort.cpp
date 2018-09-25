@@ -10,7 +10,7 @@ void show(int a[]) {
 int main() {
  int a[]={5,2,3,6,10,1,9,8,7,4};
  show(a);
- sort(a,a+10,greater());
+ sort(a,a+10,greater()); //STL sort()
  cout<<"sorted=";
  show(a);
  return 0;
